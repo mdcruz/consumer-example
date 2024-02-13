@@ -20,6 +20,8 @@ jobs:
         run: npm i
       - name: Run web consumer contract tests
         run: npm run test:web:consumer
+      - name: Publish contract to Pactflow
+        run: npm run publish:pact
       - name: Can I deploy web consumer?
         run: npm run can:i:deploy:consumer
         if: ${{ github.ref_name == 'main' }}
