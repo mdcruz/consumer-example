@@ -25,5 +25,5 @@ jobs:
       - name: Can I deploy web consumer?
         run: npm run can:i:deploy:consumer
       - name: Record web consumer deployment
-        run: npm run record:web:consumer:deployment
+        run: npm run record:web:consumer:deployment:production
         if: ${{ github.ref_name == 'main' }}
