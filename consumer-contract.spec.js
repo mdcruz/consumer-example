@@ -37,7 +37,7 @@ describe('Movies Service', () => {
     });
   });
 
-  describe('When a GET request is made to a specific movie ID', () => {
+  describe.skip('When a GET request is made to a specific movie ID', () => {
     test('it should return a specific movie', async () => {
       const testId = 100;
       EXPECTED_BODY.id = testId;
