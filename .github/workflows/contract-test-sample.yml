@@ -25,9 +25,12 @@ jobs:
       - name: Can I deploy web consumer to test?
         run: npm run can:i:deploy:consumer:test
         if: ${{ github.ref_name != 'main' }}
+      - name: Record web consumer deployment to test
+        run: npm run record:web:consumer:deployment:test
+        if: ${{ github.ref_name == 'main' }}
       - name: Can I deploy web consumer to production?
         run: npm run can:i:deploy:consumer:production
         if: ${{ github.ref_name == 'main' }}
       - name: Record web consumer deployment
-        run: npm run record:web:consumer:deployment
+        run: npm run record:web:consumer:deployment:production
         if: ${{ github.ref_name == 'main' }}

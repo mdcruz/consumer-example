@@ -37,31 +37,31 @@ describe('Movies Service', () => {
     });
   });
 
-  describe.skip('When a GET request is made to a specific movie ID', () => {
-    test('it should return a specific movie', async () => {
-      const testId = 100;
-      EXPECTED_BODY.id = testId;
+  // describe('When a GET request is made to a specific movie ID', () => {
+  //   test('it should return a specific movie', async () => {
+  //     const testId = 100;
+  //     EXPECTED_BODY.id = testId;
 
-      provider
-        .given('Has a movie with specific ID', { id: testId })
-        .uponReceiving('a request to a specific movie')
-        .withRequest({
-          method: 'GET',
-          path: `/movie/${testId}`,
-        })
-        .willRespondWith({
-          status: 200,
-          body: {
-            id: integer(testId),
-            name: string(EXPECTED_BODY.name),
-            year: integer(EXPECTED_BODY.year)
-          }
-        });
+  //     provider
+  //       .given('Has a movie with specific ID', { id: testId })
+  //       .uponReceiving('a request to a specific movie')
+  //       .withRequest({
+  //         method: 'GET',
+  //         path: `/movie/${testId}`,
+  //       })
+  //       .willRespondWith({
+  //         status: 200,
+  //         body: {
+  //           id: integer(testId),
+  //           name: string(EXPECTED_BODY.name),
+  //           year: integer(EXPECTED_BODY.year)
+  //         }
+  //       });
 
-      await provider.executeTest(async mockProvider => {
-        const movies = await fetchSingleMovie(mockProvider.url, testId);
-        expect(movies).toEqual(EXPECTED_BODY);
-      });
-    });
-  });
+  //     await provider.executeTest(async mockProvider => {
+  //       const movies = await fetchSingleMovie(mockProvider.url, testId);
+  //       expect(movies).toEqual(EXPECTED_BODY);
+  //     });
+  //   });
+});
 });
