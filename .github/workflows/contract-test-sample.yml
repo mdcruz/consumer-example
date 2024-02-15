@@ -24,7 +24,6 @@ jobs:
         run: npm run publish:pact
       - name: Can I deploy web consumer?
         run: npm run can:i:deploy:consumer
-        if: ${{ github.ref_name == 'main' }}
       - name: Record web consumer deployment
         run: npm run record:web:consumer:deployment
         if: ${{ github.ref_name == 'main' }}
